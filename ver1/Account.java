@@ -3,19 +3,12 @@ package ver1;
 public class Account {
 	// Instance variable, only available inside this class.
 	private double balance;
-
+	
 	// Constructor
 	public Account(double initBalance) {
 		balance = initBalance;
 	}
 
-	@Override
-	public String toString() {
-		String msg = "balance=" + balance;
-		return msg;
-	}
-
-	
 	// A "getter" method that simply returns the balance.
 	public double getBalance() {
 		return balance;
@@ -28,11 +21,10 @@ public void deposit(double amount) {
 	}
 }
 	
-	// Decreases the balance by amount
-	public void withdraw(double amount) {
-		if(amount>0) {
-			balance -= amount;
-		}
+	@Override
+	public String toString() {
+		String msg = "balance=$" + balance;
+		return msg;
 	}
 
 	
@@ -47,6 +39,20 @@ public void deposit(double amount) {
 		System.out.println(a1.toString());
 		System.out.println(a1);
 
-		
 	}
+	
+	public void setBalance(double newBal) {
+		if(newBal>0.0) {
+			balance = newBal;
+		}
+	}
+	
+	// Decreases the balance by amount
+	public void withdraw(double amount) {
+		if(amount>0) {
+			balance -= amount;
+		}
+	}
+
 }
+
