@@ -6,31 +6,27 @@ public class Account {
 	private double balance;
 	private String name;
 	
+	public Account(double balance) {
+		this("Unknown", balance);
+	}
+
 	public Account(String name, double balance) {
 		this.name = name;
 		this.balance = balance;
 	}
 
-
-	@Override
-	public String toString() {
-		String msg = "name=" + name + ", balance=$" + balance;
-		return msg;
+	public String getName() {
+		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	// A "getter" method that simply returns the balance.
 	public double getBalance() {
 		return balance;
 	}
-	
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 	
 // A method that increases the balance by amount
 public void deposit(double amount) {
@@ -39,20 +35,12 @@ public void deposit(double amount) {
 	}
 }
 	
-	// Decreases the balance by amount
-	public void withdraw(double amount) {
-		if(amount>0) {
-			balance -= amount;
-		}
-	}
-		
-		public void mergeAccount(Account a) {
-			if(this.getName().equals(a.getName())) {
-				this.balance += a.getBalance();
-			}
-		
+@Override
+public String toString() {
+	String msg = "name=" + name + ", balance=$" + balance;
+	return msg;
+}
 
-	}
 
 	
 	// Informal test code
@@ -66,6 +54,27 @@ public void deposit(double amount) {
 		System.out.println(a1.toString());
 		System.out.println(a1);
 
-		
 	}
+	
+	public void setBalance(double newBal) {
+		if(newBal>0.0) {
+			balance = newBal;
+		}
+	}
+	
+	// Decreases the balance by amount
+	public void withdraw(double amount) {
+		if(amount>0) {
+			balance -= amount;
+		}
+	}
+	
+	public void mergeAccount(Account a) {
+		if(this.getName().equals(a.getName())) {
+			this.balance += a.getBalance();
+		}
+	}
+
+
 }
+
