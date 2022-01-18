@@ -16,7 +16,6 @@ public class AccountTest {
 		testMergeAccount_Successful();
 		testMergeAccount_Unsuccessful();
 
-
 	}
 	
 	/*
@@ -93,6 +92,7 @@ public class AccountTest {
 		System.out.println("balance should be $1000, balance=$" + a1.getBalance());
 		System.out.println("name should be 'Unknown', name=" + a1.getName());
 	}
+	
 	private static void testMergeAccount_Successful() {
 		System.out.println("-->testMergeAccount_Successful()");
 		Account a1 = new Account("Shay", 1000.0);
